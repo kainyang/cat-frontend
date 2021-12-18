@@ -18,11 +18,16 @@
 
 .results-card {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding-left: 0;
 
     .card {
         flex: 0 0 30%;
-        padding: $medium-spacing;
+        margin: $medium-spacing;
+    }
+
+    .error-card {
+        background-color: pink;
     }
 }

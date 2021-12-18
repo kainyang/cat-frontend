@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BUTTONS, CARDS } from '../common/constants/text.const';
+import { BUTTONS, CARDS, ERROR } from '../common/constants/text.const';
 import { CatBreed } from '../common/model/cat.model';
 import { CatApiService } from '../common/service/cat-api.service';
 
@@ -10,7 +10,7 @@ import { CatApiService } from '../common/service/cat-api.service';
 })
 export class SearchCatsComponent {
 
-  TEXTS = { ...BUTTONS, ...CARDS }
+  TEXTS = { ...BUTTONS, ...CARDS, ...ERROR }
 
   IMAGE_URL = 'https://cdn2.thecatapi.com/images/';
   IMAGE_EXTENSION = '.jpg';
@@ -18,11 +18,13 @@ export class SearchCatsComponent {
 
   catBreed = '';
   catBreedList: CatBreed[] = [];
+  searchTriggered = false;
 
   constructor(private catService: CatApiService) { }
 
   search() {
     this.catBreedList = [];
+    this.searchTriggered = true;
 
     this.catService.searchCatByBreed(this.catBreed).subscribe((res: any) => {
       if (res.length > 0) {

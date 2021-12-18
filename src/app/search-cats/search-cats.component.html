@@ -1,7 +1,7 @@
 <mat-card class="search-bar">
     <mat-form-field class="form-field" appearance="fill">
         <mat-label>{{ TEXTS.LABEL.SEARCH_CAT_LABEL }}</mat-label>
-        <input matInput type="text" [(ngModel)]="catBreed">
+        <input matInput type="text" [(ngModel)]="catBreed" (keyup.enter)="search()">
         <button *ngIf="catBreed" matSuffix mat-icon-button aria-label="Clear" (click)="catBreed=''">
             <mat-icon>close</mat-icon>
         </button>
@@ -30,5 +30,8 @@
                 <b>Temperament:</b> {{ breed.temperament }}
             </p>
         </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="catBreedList.length === 0 && searchTriggered" class="error-card">
+        {{ TEXTS.NO_RESULT }}
     </mat-card>
 </div>

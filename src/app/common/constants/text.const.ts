@@ -20,3 +20,7 @@ export const CARDS = {
         SEARCH_CAT_LABEL: 'Input Cat Breed'
     }
 }
+
+export const ERROR = {
+    NO_RESULT: 'No results found.'
+}
