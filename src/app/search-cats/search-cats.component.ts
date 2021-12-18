@@ -24,7 +24,6 @@ export class SearchCatsComponent {
 
   search() {
     this.catBreedList = [];
-    this.searchTriggered = true;
 
     this.catService.searchCatByBreed(this.catBreed).subscribe((res: any) => {
       if (res.length > 0) {
@@ -33,6 +32,8 @@ export class SearchCatsComponent {
       } else {
         console.log('No results!');
       }
+
+      this.searchTriggered = true;
     });
   }
 
