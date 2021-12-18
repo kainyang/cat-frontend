@@ -7,15 +7,17 @@ import { SearchCatsComponent } from './search-cats/search-cats.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'random-cat',
-    component: GetRandomCatComponent
-  },
-  {
-    path: 'search-cats',
-    component: SearchCatsComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'random-cat',
+        component: GetRandomCatComponent
+      },
+      {
+        path: 'search-cats',
+        component: SearchCatsComponent
+      }
+    ]
   }
 ];
 

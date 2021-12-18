@@ -1,0 +1,22 @@
+@import '../../assets/common-styles.scss';
+
+.header-container {
+    display: flex;
+    color: $primary-color;
+    border-radius: 4px 4px 0px 0px;
+
+    .header {
+        padding: 5px 0px 0px 5px;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    color: $primary-color;
+    justify-content: space-evenly;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.button {
+    font-size: $font-medium;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BUTTONS, CARDS } from '../common/constants/text.const';
+import { CatApiService } from '../common/service/cat-api.service';
 
 @Component({
   selector: 'app-get-random-cat',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetRandomCatComponent implements OnInit {
 
-  constructor() { }
+  TEXTS = { ...BUTTONS, ...CARDS }
+
+  imgLink: string | undefined;
+  loaded = false;
+
+  constructor(private catService: CatApiService) { }
 
   ngOnInit(): void {
+    this.fetchRandomCat();
+  }
+
+  fetchRandomCat() {
+    this.loaded = false;
+    this.catService.getRandomCat().subscribe((cat: any) => {
+      this.imgLink = cat[0].url;
+      this.loaded = true;
+    });
   }
 
 }

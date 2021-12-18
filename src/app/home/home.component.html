@@ -1,1 +1,11 @@
-<p>home works!</p>
+<mat-card class="header-container">
+    <img class="png-icon" src="/assets/image/cat.png" style="width: 24px; height: 24px;">
+    <mat-card-title class="header">{{ TEXTS.HEADER_TEXT }}</mat-card-title>
+</mat-card>
+<mat-card class="nav-bar">
+    <mat-card-actions>
+        <a class="button" mat-button routerLink="/random-cat">{{ TEXTS.FETCH_RANDOM_CAT }}</a>
+        <a class="button" mat-button routerLink="/search-cats">{{ TEXTS.SEARCH_CATS }}</a>
+    </mat-card-actions>
+</mat-card>
+<router-outlet></router-outlet>

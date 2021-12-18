@@ -1,0 +1,16 @@
+@import '../../assets/common-styles.scss';
+
+.card-container {
+    margin: 0 auto;
+    width: 40%;
+    padding: 20px;
+
+    .card {
+        color: $primary-color;
+        text-align: -webkit-center;
+
+        .button {
+            font-size: $font-large
+        }
+    }
+}

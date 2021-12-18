@@ -1,1 +1,13 @@
-<p>get-random-cat works!</p>
+<div class="card-container">
+    <mat-card class="card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ TEXTS.HEADER.RANDOM_CATS_CARD }}</mat-card-title>
+        </mat-card-header>
+        <img *ngIf="loaded" mat-card-image [src]="imgLink" alt="Photo of a random cat">
+        <mat-spinner *ngIf="!loaded"></mat-spinner>
+        <mat-card-actions>
+            <button class="button" mat-button (click)="fetchRandomCat()">{{ TEXTS.FETCH }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
