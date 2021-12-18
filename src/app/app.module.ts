@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Material Form Controls
@@ -60,9 +62,12 @@ import { SearchCatsComponent } from './search-cats/search-cats.component';
     SearchCatsComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
+    FormsModule,
+    HttpClientModule,
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -98,7 +103,6 @@ import { SearchCatsComponent } from './search-cats/search-cats.component';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    HttpClientModule,
   ],
   exports:[
     MatAutocompleteModule,

@@ -11,4 +11,8 @@ export class CatApiService {
   getRandomCat() {
     return this.http.get('https://api.thecatapi.com/v1/images/search');
   }
+
+  searchCatByBreed(breed: string) {
+    return this.http.get(`https://api.thecatapi.com/v1/breeds/search?q=${breed}`);
+  }
 }

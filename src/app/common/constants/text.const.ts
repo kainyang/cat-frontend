@@ -9,10 +9,14 @@ export const HEADER = {
 
 export const BUTTONS = {
     FETCH: 'Fetch!',
+    SEARCH: 'Search',
 }
 
 export const CARDS = {
     HEADER: {
         RANDOM_CATS_CARD: 'Fetch Random Cat Pictures!'
+    },
+    LABEL: {
+        SEARCH_CAT_LABEL: 'Input Cat Breed'
     }
 }

@@ -1,1 +1,34 @@
-<p>search-cats works!</p>
+<mat-card class="search-bar">
+    <mat-form-field class="form-field" appearance="fill">
+        <mat-label>{{ TEXTS.LABEL.SEARCH_CAT_LABEL }}</mat-label>
+        <input matInput type="text" [(ngModel)]="catBreed">
+        <button *ngIf="catBreed" matSuffix mat-icon-button aria-label="Clear" (click)="catBreed=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-card-actions>
+        <button class="button" mat-button (click)="search()">{{ TEXTS.SEARCH }}</button>
+    </mat-card-actions>
+</mat-card>
+
+<div class="results-card">
+    <mat-card *ngFor="let breed of catBreedList" class="card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title> {{ breed.name }}</mat-card-title>
+            <mat-card-subtitle> {{ breed.alt_names }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="breed.image_url" alt="Photo of a {{ breed.name }}">
+        <mat-card-content>
+            <p>
+                <b>Description:</b> {{ breed.description }}
+            </p>
+            <p>
+                <b>Life span:</b> {{ breed.life_span }}
+            </p>
+            <p>
+                <b>Temperament:</b> {{ breed.temperament }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

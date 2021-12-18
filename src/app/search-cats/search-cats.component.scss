@@ -1,0 +1,28 @@
+@import '../../assets/common-styles.scss';
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: $medium-spacing 0px $medium-spacing 0px;
+
+    .form-field {
+        width: 50%;
+    }
+
+    .button {
+        margin: 5px 0px 0px 15px;
+        font-size: $font-large;
+        color: $primary-color;
+    }
+}
+
+.results-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+
+    .card {
+        flex: 0 0 30%;
+        padding: $medium-spacing;
+    }
+}
