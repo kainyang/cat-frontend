@@ -24,6 +24,7 @@ export class SearchCatsComponent {
 
   search() {
     this.catBreedList = [];
+    this.searchTriggered = false;
 
     this.catService.searchCatByBreed(this.catBreed).subscribe((res: any) => {
       if (res.length > 0) {
